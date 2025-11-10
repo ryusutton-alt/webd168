@@ -1,0 +1,99 @@
+* {
+  /* Reset margin and padding for all elements */
+  margin: 0;
+  padding: 0;
+  /* Use border-box model so padding/border are included in total size */
+  box-sizing: border-box;
+}
+
+/* Root rhythm for baseline alignment */
+html {
+  font-size: 100%;   /* ~16px in most browsers */
+  line-height: 1.5;  /* vertical rhythm */
+}
+
+body {
+  /* Use the linked Google Font from index.html */
+  font-family: 'Source Sans Pro', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+/* Layout container */
+section {
+  max-width: 1100px;
+  margin: 2rem auto;
+  display: flex;              /* side-by-side on large screens */
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Article */
+article {
+  flex: 2 1 60%;
+  min-width: 0;              /* prevent overflow in flex layouts */
+}
+
+/* Aside (sidebar) */
+aside {
+  flex: 1 1 40%;
+  min-width: 0;
+  padding: 1rem;
+  background-color: #f8fafc;     /* subtle contrast */
+  border-radius: 0.75rem;        /* REQUIRED: rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10); /* REQUIRED: shadow */
+}
+
+/* Typography */
+h1 {
+  font-weight: 700;
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  margin-bottom: 0.5rem;     /* REQUIRED: keeps baseline alignment */
+}
+
+h2 {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1rem + 1.2vw, 1.75rem);
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Media (images) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+}
+
+/* Media Queries */
+
+/* ≤ 768px: stack vertically */
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* Keep only layout changes here (no duplicate visual styles) */
+  aside {
+    /* no duplicate border-radius or box-shadow here by design */
+    order: 2;     /* place aside after article */
+  }
+
+  article {
+    order: 1;
+  }
+}
+
+/* ≤ 480px: small-screen type tweaks */
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.25rem; }
+  p  { font-size: 1rem; }
+}
