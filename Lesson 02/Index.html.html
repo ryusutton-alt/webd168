@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Practice file for learning CSS selectors and modern HTML structure."
+    />
+    <title>Lesson 02 - Selector Basics</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+    />
+    <style>
+      body {
+        background-color: rgb(50, 122, 167);
+        padding: 0 20px 20px 20px;
+        margin: 0;
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1em;
+        font-family: "Varela Round", Arial, Helvetica, sans-serif;
+        line-height: 1.6;
+      }
+
+      :is(h1, h2, h3) {
+        color: rgb(255, 255, 255);
+        font-family: Arial, "Palatino Linotype", Times, serif;
+        border-bottom: 2px solid rgb(87, 185, 178);
+        padding-top: 10px;
+        padding-bottom: 5px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      /* Descendant selector for hyperlink */
+      article a {
+        color: green;
+      }
+
+      /* Italic style for Me Neither heading */
+      h3 {
+        font-style: italic;
+      }
+
+      /* Custom class styling for Not Me heading */
+      .not-me {
+        color: #ffd166;
+        font-family: Georgia, "Times New Roman", serif;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>CSS: The Missing Manual</h1>
+    </header>
+
+    <article>
+      <h2>The Amazing World of CSS</h2>
+      <p>
+        <strong
+          ><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS"
+            >CSS</a
+          ></strong
+        >
+        (Cascading Style Sheets) allows you to create great-looking web pages.
+      </p>
+
+      <h2>Who Knew CSS Had Such Power?</h2>
+      <p>
+        Separation of formatting and content makes it possible to design flexible and responsive layouts.
+      </p>
+
+      <h3 class="not-me">Not Me!</h3>
+      <p>
+        My comfort level with CSS is still developing, but I feel more confident than when I first started. At the beginning, it was confusing to understand how styles affected different parts of a page, especially when multiple selectors were involved. From Chapter 3, I learned how selectors like class selectors, descendant selectors, and grouped selectors work together to target specific elements. This helped me better control layout and styling without affecting the entire page. Overall, I now have a better understanding of how to organize and apply styles more efficiently.
+      </p>
+
+      <h3>Me Neither!</h3>
+      <p>
+        This section demonstrates italic styling applied to the heading using CSS.
+      </p>
+    </article>
+  </body>
+</html>
