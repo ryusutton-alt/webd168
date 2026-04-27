@@ -1,0 +1,232 @@
+/* Lesson 07 - Flexbox, Grid, and Responsive Design */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)), url("images/turtle.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Lato", Arial, sans-serif;
+  line-height: 1.5;
+  color: #17252a;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  font-family: "Zilla Slab", Georgia, serif;
+}
+
+header {
+  max-width: 650px;
+  padding: 2.5rem 0 1.5rem;
+  color: #ffffff;
+}
+
+header h1 {
+  font-size: 2.7rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+header p {
+  font-size: 1.05rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+/* Flexbox navigation */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  list-style-type: none;
+}
+
+.navbar a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #0f4c5c;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.navbar a:hover,
+.navbar a:focus {
+  background-color: #d8f3dc;
+  color: #083b45;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #0f4c5c;
+  border-radius: 3px;
+}
+
+/* Grid card layout */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card a {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.2s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.5rem;
+  color: #0f4c5c;
+}
+
+.card-content p {
+  font-size: 0.98rem;
+}
+
+/* Footer challenge */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 1.25rem;
+  background-color: rgba(15, 76, 92, 0.95);
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+  header {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  header {
+    padding-top: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
+  }
+
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar a {
+    text-align: center;
+    padding: 0.75rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}
